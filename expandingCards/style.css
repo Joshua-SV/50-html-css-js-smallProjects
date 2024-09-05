@@ -1,0 +1,69 @@
+/*CSS */
+
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Muli", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;/*take up the whole window size*/
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    width: 90vw;
+}
+
+.panel {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 80vh;
+    color: #e7ffff;
+    border-radius: 25px;
+    cursor: pointer;
+    /*width of images*/
+    flex: 0.5;
+
+    margin: 10px;
+    position: relative;
+
+    /*transition animation on images*/
+    transition: flex 0.7s ease-in;
+}
+
+.panel h3 {
+    position: absolute;
+    font-size: 25px;
+    bottom: 12px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+
+.panel.active {
+    flex: 5;
+}
+
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.7s ease-in 0.4s;
+}
+
+/*will only take affect on small screen <= 480px */
+@media (max-width: 580px) {
+    .container {
+        width: 100vw;
+    }
+    /*remove the last 3 images if screen is small*/
+    .panel:nth-of-type(4),.panel:nth-of-type(5),.panel:nth-of-type(6){
+        display: none;
+    }
+}

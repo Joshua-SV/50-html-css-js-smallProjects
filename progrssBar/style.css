@@ -1,0 +1,112 @@
+/*CSS */
+
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+:root {
+    --line-border-fill: #3498db;
+    --circle-size: 30px;
+    --line-border-empty: #e0e0e0;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e7ffff;
+    font-family: "Muli", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /*take up the whole window size*/
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    position: relative;
+    max-width: 100%;
+    width: 400px;
+}
+
+.progress {
+    position: absolute;
+    background-color: var(--line-border-fill);
+    top: 50%;
+    left: 0;
+    height: 4px;
+    width: 0;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: .4s ease;
+}
+
+.progress-container::before {
+    content: '';
+    position: absolute;
+    background-color: var(--line-border-empty);
+    top: 50%;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.circle {
+    background-color: #FFF;
+    color: #ff7979;
+    border-radius: 50%;
+    height: var(--circle-size);
+    width: var(--circle-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px dashed var(--line-border-empty);
+    transition: 0.4s ease;
+}
+
+.circle.active {
+    border-color: var(--line-border-fill);
+    color: var(--line-border-fill);
+}
+
+.btn {
+    background-color: var(--line-border-fill);
+    box-sizing: border-box;
+    color: #FFFFFF;
+    border: 0;
+    border-radius: 7px;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 7px 30px;
+    margin: 5px;
+    font-size: 14px;
+
+}
+
+.btn:active {
+    transform: scale(.85) rotate(25deg); /*when clicked it shrinks and rotates*/
+}
+
+.btn#prev:active {
+    transform: scale(.85) rotate(-25deg); /*when clicked it shrinks and rotates*/
+}
+
+.btn:focus {
+    outline: 0; /*no outline*/
+}
+
+.btn:disabled {
+    background-color: var(--line-border-empty);
+    cursor: not-allowed;
+}

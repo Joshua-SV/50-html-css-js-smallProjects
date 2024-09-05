@@ -7,7 +7,7 @@ const backGrd = document.querySelector(".background")
 let load = 0;
 
 //will update integer every timeout using bluer function
-let integer = setInterval(bluer, 30)
+let intervalID = setInterval(bluer, 30)
 
 
 function bluer() {
@@ -15,7 +15,7 @@ function bluer() {
 
     // let's stop integer from updating further than 100
     if (load > 99) {
-        clearInterval(integer)
+        clearInterval(intervalID);
     }
 
     // update front page percentage

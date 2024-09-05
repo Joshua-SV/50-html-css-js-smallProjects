@@ -7,22 +7,47 @@
 }
 
 body {
-    background-color: #fff788;
+    background-color: #fcd144;
     font-family: "roboto", sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0;
+    overflow-x: hidden;
 }
 
 h1 {
     margin: 10px;
 }
 
+h2 {
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+}
+
 .box {
-    margin: 10px;
+    margin: 10px 0;
     background-color: steelblue;
     color: #FFF;
-    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 200px;
+    border-radius: 12px;
+    box-shadow: 3px 4px 5px rgb(0,0,0,0.3);
+    transform: translateX(400%);
+    transition: transform 1s ease;
+
+}
+
+/* Now for every even item we want it to come from the left side of the screen */
+.box:nth-of-type(even) {
+    transform: translateX(-400%); 
+}
+
+.showBox {
+    transform: translateX(0) !important; /*make the item appear back in its original place*/
 }

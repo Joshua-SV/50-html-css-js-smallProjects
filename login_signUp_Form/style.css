@@ -1,0 +1,96 @@
+/*CSS */
+
+@import url('https://fonts.googleapis.com/css2?family=Muli&family=Roboto:ital,wght@0,700;1,400&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Muli', "roboto", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;/*take up the whole window size*/
+    overflow: hidden;
+    margin: 0;
+    background-color: cadetblue;
+    color: white;
+}
+
+.text {
+    margin-top: 30px;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: orange;
+}
+
+a:hover {
+    color: lightcyan;
+}
+
+.btn {
+    width: 100%;
+    cursor: pointer;
+    display: inline-block;
+    background: orange;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 15px;
+    border: 0;
+    border-radius: 5px;
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn:hover {
+    background: lightcyan;
+}
+
+.container {
+    background-color: rgba(0,0,0,0.4);
+    padding: 20px 40px;
+    border-radius: 5px;
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-control {
+    position: relative;
+    margin: 20px 0px 40px;
+    width: 300px;
+}
+
+.form-control input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: #fff solid 2px;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    color: #fff;
+    font-size: 18px;
+}
+
+.form-control input:focus, .form-control input:valid {
+    outline: 0;
+}
+
+.form-control label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+}
